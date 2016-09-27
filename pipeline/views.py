@@ -6,11 +6,11 @@ def index(request):
 	return render_to_response('index.html') # brief introduction, point out lopen's features
 
 def service(request):
-	return render_to_response('service_process.html') # the arrow plot page
+	return render_to_response('service.html') # the arrow plot page
 
-def demo(request,demotype):
+def demo(request,demotype): # demo page, import different model according to demotype
 	if demotype not in ['pretreat','liedetect','sarcasm']:
-		return redirect("/service_process/")
+		return redirect("/service/")
 	else:
 		f_consult = ConsultForm()
 		if 'demonstrate' in request.POST:
