@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from pipeline.views import index,service,demo
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+	url(r'^index$', index),
+	url(r'^index/service_process$',service),
+	url(r'^index/service_process$/(\d+)$',demo),
 ]
