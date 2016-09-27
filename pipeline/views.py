@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response,redirect
-from pipeline.forms import DemoForm,ConsultForm
+from pipeline.form import DemoForm,ConsultForm
 
 # Create your views here.
 def index(request):
@@ -38,6 +38,6 @@ def demo(request,demotype):
 				f_demo= CommentForm(initial={'content':'inital for pretreat'})
 			elif demotype == 'liedetect':
 				f_demo= CommentForm(initial={'content':'inital for liedetect'})
-			elif demotype == 'sarcasm'
+			elif demotype == 'sarcasm':
 				f_demo= CommentForm(initial={'content':'inital for sarcasm'})
 		return render_to_response('demo.html',locals())
